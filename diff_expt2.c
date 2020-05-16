@@ -22,7 +22,9 @@ void delay(unsigned int t)
 
 void clearArea(int u,int v,int w,int x){
 
-glColor3f(0.101,0.176,0.231);  // Alice 
+glColor3f(0.101,0.176,0.231);  
+     // Alice 
+// glColor3f(0.7,0.8,0.6);
 
 glBegin(GL_QUADS);
     glVertex2f(u,w);
@@ -32,6 +34,34 @@ glBegin(GL_QUADS);
 glEnd();
 
 }
+
+void outputWhite(int x,int y,char *string)
+{
+    glColor3f(1,1,1);
+    int len,i;
+    glRasterPos2f(x,y);
+    len=(int) strlen(string);
+    for(i=0;i<len;i++)
+        glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,string[i]);
+    glFlush();
+    
+}
+
+void outputC(int x,int y,char *string)
+{
+    glColor3f(1,0.8,0.89);
+    int len,i;
+    glRasterPos2f(x,y);
+    len=(int) strlen(string);
+    for(i=0;i<len;i++)
+        glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,string[i]);
+    glFlush();
+    
+}
+
+
+
+
 
 
 
@@ -143,7 +173,7 @@ float ipos4=460;
 
 void green2(){
 
-glColor3f(0,1,0.0);  //  Bob green
+glColor3f(0,0.6,0.0);  //  Bob green
 
 glBegin(GL_QUADS);
     glVertex2f(ipos3,325);
@@ -171,7 +201,7 @@ void moveHorizontal(){
 int i=0;
 int j=630;
 
-while (i<495 && j>80)
+while (i<490 && j>80)
 {
 
 glColor3f(1,0.49,0);  // Alice orange 
@@ -185,13 +215,13 @@ glEnd();
 
 delay(1);
 // glutTimerFunc(1000,clearArea(pos1,pos2,325,300));  
-clearArea(pos1-70,pos2-70,325,300);
+clearArea(pos1-70,pos2-65,325,300);
 
 pos1+=1;
 pos2+=1;
 i+=1;
 
-glColor3f(0,1,0.0);  //  Bob green
+glColor3f(0,0.6,0.0);  //  Bob green
 glBegin(GL_QUADS);
     glVertex2f(pos3,325);
     glVertex2f(pos4,325);
@@ -201,7 +231,7 @@ glEnd();
 
 delay(1);
 // glutTimerFunc(1000,clearArea(pos1,pos2,325,300));  
-clearArea(pos3+70,pos4+70,325,300);
+clearArea(pos3+60,pos4+65,325,300);
 
 pos3-=1;
 pos4-=1;
@@ -244,7 +274,7 @@ glBegin(GL_QUADS);
     glVertex2f(240,ipos2);
 glEnd();
 
-glColor3f(0,1,0.0);  //  Bob green
+glColor3f(0,0.6,0.0);  //  Bob green
 
 glBegin(GL_QUADS);
     glVertex2f(400,ipos1);
@@ -255,7 +285,7 @@ glEnd();
 
 glFlush();
 
-delay(1);
+delay(2);
 // glutTimerFunc(1000,clearArea(pos1,pos2,325,300));  
 clearArea(240,300,ipos1-20,ipos2-20);
 
@@ -345,6 +375,10 @@ glBegin(GL_QUADS);
     glVertex2f(80,265);
 glEnd();
 
+
+outputWhite(52,170,"2] They select thier private key (red and blue) respectively which is not visible to others.");
+
+
 glFlush();
 
 // glutSwapBuffers();
@@ -381,13 +415,17 @@ glBegin(GL_QUADS);
     glVertex2f(80,300);
 glEnd();
 
+delay(1000);
+  outputWhite(44,120,"3] They disguise thier private key by mixing it with public key to obtain orange and green."); 
+    // outputWhite(150,75,"                to obtain orange and green");
+
 glFlush();
 
 }
 
 void green(){
 
-glColor3f(0,1,0.0);  //  Bob green
+glColor3f(0,0.6,0.0);  //  Bob green
 
 glBegin(GL_QUADS);
     glVertex2f(570,325);
@@ -403,12 +441,16 @@ glFlush();
 void brownA()
 {
 
+delay(500);
+
+clearArea(80,140,265,290);
+
 glColor3f(0.6,0.29,0.0);  // Alice brown
 
 glBegin(GL_QUADS);
     glVertex2f(80,325);
-    glVertex2f(140,325);
-    glVertex2f(140,300);
+    glVertex2f(141,325);
+    glVertex2f(141,300);
     glVertex2f(80,300);
 glEnd();
 
@@ -418,22 +460,112 @@ glEnd();
 void brownB()
 {
 
+delay(500);
+clearArea(570,630,265,290);
+
+
 glColor3f(0.6,0.29,0.0);  // Bob brown
 
 glBegin(GL_QUADS);
-    glVertex2f(570,325);
+    glVertex2f(564,325);
     glVertex2f(630,325);
     glVertex2f(630,300);
-    glVertex2f(570,300);
+    glVertex2f(564,300);
 glEnd();
 
+outputWhite(55,70,"4] They mix thier private key and shared secret key to obtain a common color (brown),");
+outputWhite(140,40,"which is obtained only when you have respective private keys.");
 
+// outputWhite(150,10,"         "); 
 
 
 }
 
 
 
+
+// void step1(){
+
+//     outputWhite(230,200,"STEP-1: ALice and Bob agree with a public key (yellow)");
+//     delay(100);
+//     outputWhite(210,150,"STEP-2: ALice and Bob select thier private key (red and blue)");
+//     delay(100);
+//     outputWhite(150,100,"STEP-3: They disguise thier private key by mixing it with public key"); 
+//     outputWhite(150,75,"                to obtain orange and green");
+
+
+
+
+//     outputWhite(150,50,"STEP-4: They mix thier private key and shared secret key to obtain a common color(brown)"); 
+
+
+
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// int y=0;
+
+// float ypos1=250;
+// float ypos2=240;
+
+void success(){
+
+  glColor3f(0, 1, 0);
+
+  for (int i = 180; i < 530; i++) {
+    glBegin(GL_POLYGON);
+      glVertex2i(i, 380);
+      glVertex2i(i + 1, 380);
+      glVertex2i(i + 1, 390);
+      glVertex2i(i, 390);
+    glEnd();
+    glFlush();
+    delay(1);
+  }
+
+  
+
+    // while(y<100){
+
+    // output(250,ypos1,"CONNECTION ESTABLISHED !!");
+
+    // delay(1000);
+
+    // clearArea(250,500,ypos1,ypos2);
+
+    // y+=1;
+    // ypos1+=1;
+    // ypos2+=1;
+
+    // }
+
+
+
+//     for (int y=220; y < 320; y += 1) {
+//      outputWhite(250,y,"CONNECTION ESTABLISHED!!");
+//       delay(2);
+//       if (y != 299)
+//          clearArea(250,500, y+40, 50);
+//    }
+
+        outputC(240,320,"CONNECTION ESTABLISHED !!");
+
+
+}
 
 
 
@@ -467,6 +599,10 @@ glBegin(GL_QUADS);
     glVertex2f(380,555);
     glVertex2f(320,555);
 glEnd();
+
+// delay(2000);
+outputWhite(90,220,"1] Alice and Bob agree with a public key (yellow) which is visible to everyone.");
+delay(2000);
 
 // glutSwapBuffers();
 glFlush();
@@ -583,14 +719,10 @@ glBegin(GL_QUADS);
     glVertex2f(320,585);
 glEnd();
 
-
 output(305,670,"INTRUDER");
 
 
 }
-
-
-
 
 void home()
 {
@@ -608,15 +740,15 @@ void home()
 
 void menu(int id){
     if(id==1){
-
-
         yellow();
         // delay(500);
+
+
         glutTimerFunc(1000,red,0);
         glutTimerFunc(1000,blue,0);
 
-        glutTimerFunc(2000,orange,0);
-        glutTimerFunc(2000,green,0);
+        glutTimerFunc(3000,orange,0);
+        glutTimerFunc(3000,green,0);
 
         
         glutTimerFunc(3000,moveHorizontal,0);
@@ -624,22 +756,55 @@ void menu(int id){
         // orange2(); 
         // green2();
 
-        glutTimerFunc(3100,moveVertical,0);
+        glutTimerFunc(3000,moveVertical,0);
+        
+        // glutTimerFunc(5000,step1,0);
 
 
         // moveAll(80,140,570,630); 
         // glutTimerFunc(2500,moveLeft,0);
         
+        
+        
         // moveLeft();
+        
+        // glutPostRedisplay();
+
     }
 
     else if(id==2){
         brownA();
         brownB();
+        glutTimerFunc(500,success,0);
+
+
+
+
+        // success(); 
+        
 
     }
 
+
+     else{ exit(0); }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 int main(int argc,char** argv)
@@ -659,14 +824,21 @@ glMatrixMode(GL_MODELVIEW);//INIT
    
 gluOrtho2D(0,700,0,700);
 
+// glPointSize(10.0);
+
+// glutKeyboardFunc(keyfunc);//enabling keyboard
+
+
+
    
 glutCreateMenu(menu);
-glutAddMenuEntry("Exchange Public Keys",1);
-glutAddMenuEntry("Add Your Private Key",2);
-glutAddMenuEntry("Quit",3);
+glutAddMenuEntry("1.Exchange Public Keys",1);
+glutAddMenuEntry("2.Add Your Private Key",2);
+glutAddMenuEntry("3.Quit",3);
 glutAttachMenu(GLUT_RIGHT_BUTTON);
 
-glutDisplayFunc(home);
+home();
+// glutDisplayFunc(home);
 
 
 glutMainLoop();
