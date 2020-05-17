@@ -35,6 +35,38 @@ glEnd();
 
 }
 
+
+
+void outputHelveticaWhite(int x,int y,char *string)
+{
+    glColor3f(1,1,1);
+    int len,i;
+    glRasterPos2f(x,y);
+    len=(int) strlen(string);
+    for(i=0;i<len;i++)
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,string[i]);
+    glFlush();
+    
+}
+
+
+void outputWhite12(int x,int y,char *string)
+{
+    glColor3f(1,1,1);
+    int len,i;
+    glRasterPos2f(x,y);
+    len=(int) strlen(string);
+    for(i=0;i<len;i++)
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_12,string[i]);
+    glFlush();
+    
+}
+
+
+
+
+
+
 void outputWhite(int x,int y,char *string)
 {
     glColor3f(1,1,1);
@@ -49,7 +81,33 @@ void outputWhite(int x,int y,char *string)
 
 void outputC(int x,int y,char *string)
 {
-    glColor3f(1,0.8,0.89);
+    glColor3f(1,1,0);
+    int len,i;
+    glRasterPos2f(x,y);
+    len=(int) strlen(string);
+    for(i=0;i<len;i++)
+        glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,string[i]);
+    glFlush();
+    
+}
+
+
+void outputBlue(int x,int y,char *string)
+{
+    glColor3f(0,0,1);
+    int len,i;
+    glRasterPos2f(x,y);
+    len=(int) strlen(string);
+    for(i=0;i<len;i++)
+        glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,string[i]);
+    glFlush();
+    
+}
+
+
+void outputBG(int x,int y,char *string)
+{
+    glColor3f(0.101,0.176,0.231);
     int len,i;
     glRasterPos2f(x,y);
     len=(int) strlen(string);
@@ -291,12 +349,6 @@ clearArea(240,300,ipos1-20,ipos2-20);
 
 clearArea(400,460,ipos1-20,ipos2-20);
 
-
-
-
-
-
-
 ipos1+=1;
 ipos2+=1;
 m+=1;
@@ -317,8 +369,13 @@ m+=1;
 // pos4-=1;
 // j-=1;
 
+
+
+
 glFlush();
 }
+outputHelveticaWhite(285,350,"Now add your private key");
+
 
 }
 
@@ -418,6 +475,8 @@ glEnd();
 delay(1000);
   outputWhite(44,120,"3] They disguise thier private key by mixing it with public key to obtain orange and green."); 
     // outputWhite(150,75,"                to obtain orange and green");
+    // delay(500);
+
 
 glFlush();
 
@@ -562,7 +621,17 @@ void success(){
 //          clearArea(250,500, y+40, 50);
 //    }
 
-        outputC(240,320,"CONNECTION ESTABLISHED !!");
+    int i=0;
+
+    while(i<50){
+
+        outputC(240,280+i,"CONNECTION ESTABLISHED !!");
+        delay(10);
+        outputBG(240,280+i,"CONNECTION ESTABLISHED !!");
+        i+=1;
+
+    }
+        outputC(240,280+i,"CONNECTION ESTABLISHED !!");
 
 
 }
@@ -726,8 +795,11 @@ output(305,670,"INTRUDER");
 
 void home()
 {
-    glClearColor(0.101,0.176,0.231,1);
-    glClear(GL_COLOR_BUFFER_BIT);
+     glClearColor(0.101,0.176,0.231,1);
+     glClear(GL_COLOR_BUFFER_BIT);
+
+    outputHelveticaWhite(285,350,"Right Click on the Screen");
+   
     
     computer();
     computer_dest();
@@ -737,13 +809,381 @@ void home()
     glFlush();
 }
 
+void credits(){
+
+   
+    glClearColor(0.101,0.176,0.231,1);
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    glColor3f(0,0,0.0);  // Top
+
+
+    glBegin(GL_QUADS);
+        glVertex2f(0,650);
+        glVertex2f(700,650);
+        glVertex2f(700,700);
+        glVertex2f(0,700);
+    glEnd();
+
+
+    output(270,665,"CREDENTIALS");
+
+
+
+    int i=0;
+    while(i<150){
+
+    outputC(50+i,550,"DIFFIE-HELLMAN KEY EXCHANGE");
+    delay(7);
+
+    outputBG(50+i,550,"DIFFIE-HELLMAN KEY EXCHANGE");
+    i+=1;
+    }
+
+    outputC(50+i,550,"DIFFIE-HELLMAN KEY EXCHANGE");
+
+
+
+    glColor3f(0,0,0.0);  // Bottom
+
+
+    glBegin(GL_QUADS);
+        glVertex2f(0,50);
+        glVertex2f(700,50);
+        glVertex2f(700,0);
+        glVertex2f(0,0);
+    glEnd();
+
+    output(260,020,"Press \"Enter\" to Start");
+
+    // glutSwapBuffers();
+    glFlush();    
+
+}
+
+
+void miniExchange(){
+
+}
+
+
+
+void miniUses(){
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// float kposx=2
+
+void clearKey(int kposx){
+
+glColor3f(0.101,0.176,0.231);  // Top
+
+// glColor3f(1,0,0);  // Top
+
+glBegin(GL_LINE_LOOP);
+
+    glVertex2f(500.0+kposx,550.0);
+    glVertex2f(520.0+kposx,580.0);
+    glVertex2f(525.0+kposx,580.0);
+    glVertex2f(525.0+kposx,550.0);
+    glVertex2f(520.0+kposx,530.0);
+    glVertex2f(525.0+kposx,510.0);
+    glVertex2f(520.0+kposx,490.0);
+    glVertex2f(525.0+kposx,470.0);
+    glVertex2f(525.0+kposx,410.0);
+
+    glVertex2f(545.0+kposx,390.0);   //Bottom 
+
+    glVertex2f(545.0+kposx,360.0);
+
+    glVertex2f(525.0+kposx,330.0);
+
+
+    glVertex2f(500.0+kposx,330.0);  //prob
+
+//    glVertex2f(500.0+kposx,410.0);
+
+    glVertex2f(480.0+kposx,360.0);
+
+    glVertex2f(480.0+kposx,390.0);
+
+    glVertex2f(500.0+kposx,410.0);
+
+glEnd();
+
+glFlush();
+
+}
+
+void keyDraw(int kposx){
+
+// glColor3f(0.75,0.85,0.65);  //key
+
+glColor3f(1,1,0);  //key
+
+
+glBegin(GL_LINE_LOOP);
+    glVertex2f(500.0+kposx,550.0);
+    glVertex2f(520.0+kposx,580.0);
+    glVertex2f(525.0+kposx,580.0);
+    glVertex2f(525.0+kposx,550.0);
+    glVertex2f(520.0+kposx,530.0);
+    glVertex2f(525.0+kposx,510.0);
+    glVertex2f(520.0+kposx,490.0);
+    glVertex2f(525.0+kposx,470.0);
+    glVertex2f(525.0+kposx,410.0);
+
+
+    glVertex2f(545.0+kposx,390.0);   //Bottom 
+    glVertex2f(545.0+kposx,360.0);
+
+
+    glVertex2f(525.0+kposx,330.0);
+    glVertex2f(500.0+kposx,330.0);
+
+    glVertex2f(525.0+kposx,330.0);
+    glVertex2f(500.0+kposx,330.0);
+
+
+    glVertex2f(480.0+kposx,360.0);
+    glVertex2f(480.0+kposx,390.0);
+    glVertex2f(500.0+kposx,410.0);
+    glVertex2f(500.0+kposx,410.0);
+
+glEnd();
+glFlush();
+
+// glClearColor(0.101,0.176,0.231,1);
+
+delay(10);
+
+clearKey(kposx);
+
+}
+
+
+void problem(){
+
+
+    glClearColor(0.101,0.176,0.231,1);
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    glColor3f(0,0,0.0);  // Top
+
+
+    glBegin(GL_QUADS);
+        glVertex2f(0,650);
+        glVertex2f(700,650);
+        glVertex2f(700,700);
+        glVertex2f(0,700);
+    glEnd();
+
+
+    output(285,665,"PROBLEM");
+
+
+    outputWhite(70,500,"Exchanging the keys between two communicating ");
+    outputWhite(70,450,"parties securely,we dont just want to establish a common key ");
+    outputWhite(70,400,"but want to do so in a such way that anyone who is listning to");
+    outputWhite(70,350,"communication between the devices donot find out the key.");
+
+
+    int kposx=20;
+    int i=0;
+    while(i<=40){
+
+        keyDraw(kposx);
+        i+=1;
+        kposx+=1;
+    }
+
+
+// glColor3f(0.75,0.85,0.65);  //key
+
+glColor3f(1,1,0);  //key
+
+
+glBegin(GL_LINE_LOOP);
+    glVertex2f(500.0+kposx,550.0);
+    glVertex2f(520.0+kposx,580.0);
+    glVertex2f(525.0+kposx,580.0);
+    glVertex2f(525.0+kposx,550.0);
+    glVertex2f(520.0+kposx,530.0);
+    glVertex2f(525.0+kposx,510.0);
+    glVertex2f(520.0+kposx,490.0);
+    glVertex2f(525.0+kposx,470.0);
+    glVertex2f(525.0+kposx,410.0);
+
+
+    glVertex2f(545.0+kposx,390.0);   //Bottom 
+    glVertex2f(545.0+kposx,360.0);
+
+
+    glVertex2f(525.0+kposx,330.0);
+    glVertex2f(500.0+kposx,330.0);
+
+    glVertex2f(525.0+kposx,330.0);
+    glVertex2f(500.0+kposx,330.0);
+
+
+    glVertex2f(480.0+kposx,360.0);
+    glVertex2f(480.0+kposx,390.0);
+    glVertex2f(500.0+kposx,410.0);
+    glVertex2f(500.0+kposx,410.0);
+
+glEnd();
+glFlush();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // keyDraw(kposx);
+    
+
+    glColor3f(0,0,0.0);  // Bottom
+
+
+    glBegin(GL_QUADS);
+        glVertex2f(0,50);
+        glVertex2f(700,50);
+        glVertex2f(700,0);
+        glVertex2f(0,0);
+    glEnd();
+
+
+    output(260,020,"Press any key to Continue");
+
+
+    glFlush();    
+
+
+
+
+
+}
+
+
+void solution(){
+
+    glClearColor(0.101,0.176,0.231,1);
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    glColor3f(0,0,0.0);  // Top
+
+    glBegin(GL_QUADS);
+        glVertex2f(0,650);
+        glVertex2f(700,650);
+        glVertex2f(700,700);
+        glVertex2f(0,700);
+    glEnd();
+
+
+    output(285,665,"SOLUTION");
+
+
+    int i=0;
+    while(i<150){
+
+    outputC(50+i,550,"DIFFIE-HELLMAN KEY EXCHANGE");
+    delay(7);
+
+    outputBG(50+i,550,"DIFFIE-HELLMAN KEY EXCHANGE");
+    i+=1;
+    }
+
+    outputC(50+i,550,"DIFFIE-HELLMAN KEY EXCHANGE");
+
+
+    outputHelveticaWhite(110,470,"* DIFFIE-HELLMAN KEY EXCHANGE establishes a shared secret between two parties,");
+
+    outputHelveticaWhite(110,440,"    that can be used for secret communication for exchanging data over public networks.");
+
+
+    miniExchange();
+
+    //  that can be used for secret communication for exchanging data over public networks.");
+
+outputHelveticaWhite(110,260,"* This algorithm can also be used for:");
+outputHelveticaWhite(110,230,"  Encryption");
+outputHelveticaWhite(110,200,"  Password Authenticated Agreement");
+outputHelveticaWhite(110,170,"  Forward Secrecy");
+ 
+miniUses();
+
+
+
+
+
+
+
+
+
+
+
+
+    glColor3f(0,0,0.0);  // Bottom
+
+
+    glBegin(GL_QUADS);
+        glVertex2f(0,50);
+        glVertex2f(700,50);
+        glVertex2f(700,0);
+        glVertex2f(0,0);
+    glEnd();
+
+
+    output(225,020,"Press \"S\" to Start Simulation");
+
+
+    glFlush();    
+
+
+}
+
+
+
+
+
 
 void menu(int id){
     if(id==1){
+
+        
+        clearArea(285,500,340,390);
         yellow();
         // delay(500);
-
-
         glutTimerFunc(1000,red,0);
         glutTimerFunc(1000,blue,0);
 
@@ -752,15 +1192,10 @@ void menu(int id){
 
         
         glutTimerFunc(3000,moveHorizontal,0);
-
         // orange2(); 
         // green2();
-
         glutTimerFunc(3000,moveVertical,0);
-        
         // glutTimerFunc(5000,step1,0);
-
-
         // moveAll(80,140,570,630); 
         // glutTimerFunc(2500,moveLeft,0);
         
@@ -773,37 +1208,48 @@ void menu(int id){
     }
 
     else if(id==2){
+        
+        clearArea(285,500,340,390);
         brownA();
         brownB();
+
+        // problems();
+
+        
         glutTimerFunc(500,success,0);
 
-
-
-
         // success(); 
-        
-
+    
     }
-
-
      else{ exit(0); }
 
 }
 
 
+void keyfunc (unsigned char key, int x, int y)
+{
+   switch(key) {
 
+      case 'S' :
+      case 's' :
+         // glutDisplayFunc(keys);
+          // glutPostRedisplay();
+         	home();
+         	break;
+         	   	
+      
+      case 'q':
+      case 'Q':
+               exit(0);
 
-
-
-
-
-
-
-
-
-
-
-
+      case '\r':
+                problem();
+                break;
+               
+      default: solution();         
+    }
+    
+}
 
 
 
@@ -818,15 +1264,15 @@ glutInitWindowPosition(0,0);
 
 glutInitWindowSize(1000,700);
 
-glutCreateWindow("Demo");
+glutCreateWindow("Diffie-Hellman Key Exchange");
 
 glMatrixMode(GL_MODELVIEW);//INIT
    
 gluOrtho2D(0,700,0,700);
 
-// glPointSize(10.0);
+glPointSize(100.0);
 
-// glutKeyboardFunc(keyfunc);//enabling keyboard
+glutKeyboardFunc(keyfunc);//enabling keyboard
 
 
 
@@ -837,7 +1283,7 @@ glutAddMenuEntry("2.Add Your Private Key",2);
 glutAddMenuEntry("3.Quit",3);
 glutAttachMenu(GLUT_RIGHT_BUTTON);
 
-home();
+credits();
 // glutDisplayFunc(home);
 
 
