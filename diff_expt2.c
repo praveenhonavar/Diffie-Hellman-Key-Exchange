@@ -37,6 +37,19 @@ glEnd();
 
 
 
+void outputRed(int x,int y,char *string)
+{
+    glColor3f(0.5,0.81,0.94);                                  //Red-B
+    int len,i;
+    glRasterPos2f(x,y);
+    len=(int) strlen(string);
+    for(i=0;i<len;i++)
+        glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,string[i]);
+    glFlush();
+    
+}
+
+
 void outputHelveticaWhite(int x,int y,char *string)
 {
     glColor3f(1,1,1);
@@ -61,9 +74,6 @@ void outputWhite12(int x,int y,char *string)
     glFlush();
     
 }
-
-
-
 
 
 
@@ -116,12 +126,6 @@ void outputBG(int x,int y,char *string)
     glFlush();
     
 }
-
-
-
-
-
-
 
 
 
@@ -829,16 +833,15 @@ void credits(){
     output(270,665,"CREDENTIALS");
 
 
-
     int i=0;
-    while(i<150){
+    // while(i<150){
 
-    outputC(50+i,550,"DIFFIE-HELLMAN KEY EXCHANGE");
-    delay(7);
+    // outputC(50+i,550,"DIFFIE-HELLMAN KEY EXCHANGE");
+    // delay(7);
 
-    outputBG(50+i,550,"DIFFIE-HELLMAN KEY EXCHANGE");
-    i+=1;
-    }
+    // outputBG(50+i,550,"DIFFIE-HELLMAN KEY EXCHANGE");
+    // i+=1;
+    // }
 
     outputC(50+i,550,"DIFFIE-HELLMAN KEY EXCHANGE");
 
@@ -862,13 +865,127 @@ void credits(){
 }
 
 
-void miniExchange(){
+void miniSecure(){
+
+    int i=0;
+    while(i<30){
+        delay(500);
+        outputC(300+i+50,200,"*");
+        i+=1;
+    }
+
+    // outputRed(500+i,200,"*");
 
 }
 
 
 
 void miniUses(){
+
+    float theata;
+
+    glColor3f(1,0.79,0.29);                //Alice head
+    glBegin(GL_POLYGON);
+    for(int i=0;i<360;i++){
+        theata=i*3.142/180;
+        glVertex2f(150+10*cos(theata),220+20*sin(theata));
+    }
+
+    glEnd();
+
+
+
+    glColor3f(1,0.01,0.24);                 //Alice body
+    glBegin(GL_POLYGON);
+    for(int i=0;i<360;i++){
+        theata=i*3.142/180;
+        glVertex2f(150+10*cos(theata),150+40*sin(theata));
+    }
+
+    glEnd();
+
+
+glColor3f(0.101,0.176,0.231);            //clear Alice
+glBegin(GL_QUADS);
+    glVertex2f(140.0,105.0);
+    glVertex2f(160.0,105.0);
+    glVertex2f(160.0,145.0);
+    glVertex2f(140.0,145.0);
+glEnd();
+
+
+outputHelveticaWhite(132,110,"ALICE");
+
+
+    glColor3f(1,0.79,0.29);                //Bob head
+    glBegin(GL_POLYGON);
+    for(int i=0;i<360;i++){
+        theata=i*3.142/180;
+        glVertex2f(520+10*cos(theata),220+20*sin(theata));
+    }
+
+    glEnd();
+
+    glColor3f(0.5,0.81,0.94);                 //Bob body
+    glBegin(GL_POLYGON);
+    for(int i=0;i<360;i++){
+        theata=i*3.142/180;
+        glVertex2f(520+10*cos(theata),150+40*sin(theata));
+    }
+
+    glEnd();
+
+
+glColor3f(0.101,0.176,0.231);            //clear Bob
+
+    // glColor3f(1,1,0);                 
+
+glBegin(GL_QUADS);
+    glVertex2f(510.0,105.0);
+    glVertex2f(560.0,105.0);
+    glVertex2f(560.0,145.0);
+    glVertex2f(510.0,145.0);
+glEnd();
+
+
+outputHelveticaWhite(508,110,"BOB");
+
+
+
+int i=0;
+
+while(i<220){
+
+glColor3f(0.7,0.8,0.6);  //message
+glBegin(GL_QUADS);
+    glVertex2f(205+i,190);
+    glVertex2f(265+i,190);
+    glVertex2f(270+i,185);
+    glVertex2f(210+i,185);
+glEnd();
+
+delay(3);
+
+glColor3f(0.101,0.176,0.231); //clear  message
+
+// glColor3f(1,0,0);
+glBegin(GL_QUADS);
+    glVertex2f(205+i-30,190);
+    glVertex2f(265+i-30,190);
+    glVertex2f(270+i-30,185);
+    glVertex2f(210+i-30,185);
+glEnd();
+
+i+=1;
+glFlush();
+
+}
+
+
+glFlush();
+
+
+
 
 }
 
@@ -898,7 +1015,6 @@ glColor3f(0.101,0.176,0.231);  // Top
 // glColor3f(1,0,0);  // Top
 
 glBegin(GL_LINE_LOOP);
-
     glVertex2f(500.0+kposx,550.0);
     glVertex2f(520.0+kposx,580.0);
     glVertex2f(525.0+kposx,580.0);
@@ -979,10 +1095,45 @@ clearKey(kposx);
 }
 
 
+
+
+void drawCircle1(){
+    float theata;
+
+    glColor3f(1,0,0);
+    glBegin(GL_POLYGON);
+    for(int i=0;i<360;i++){
+        theata=i*3.142/180;
+        glVertex2f(250+10*cos(theata),250+10*sin(theata));
+    }
+
+    glEnd();
+    glFlush();
+}
+
+
+void drawCircle2(){
+    float theata;
+
+    glColor3f(1,0,0);
+    glBegin(GL_POLYGON);
+    for(int i=0;i<360;i++){
+        theata=i*3.142/180;
+        glVertex2f(250+10*cos(theata),250+10*sin(theata));
+    }
+
+    glEnd();
+    glFlush();
+}
+
+
+
+
 void problem(){
 
 
     glClearColor(0.101,0.176,0.231,1);
+
     glClear(GL_COLOR_BUFFER_BIT);
 
     glColor3f(0,0,0.0);  // Top
@@ -998,7 +1149,6 @@ void problem(){
 
     output(285,665,"PROBLEM");
 
-
     outputWhite(70,500,"Exchanging the keys between two communicating ");
     outputWhite(70,450,"parties securely,we dont just want to establish a common key ");
     outputWhite(70,400,"but want to do so in a such way that anyone who is listning to");
@@ -1013,6 +1163,7 @@ void problem(){
         i+=1;
         kposx+=1;
     }
+
 
 
 // glColor3f(0.75,0.85,0.65);  //key
@@ -1049,27 +1200,11 @@ glBegin(GL_LINE_LOOP);
     glVertex2f(500.0+kposx,410.0);
 
 glEnd();
-glFlush();
+glFlush();               // keyDraw(kposx);
 
 
+miniUses();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // keyDraw(kposx);
     
 
     glColor3f(0,0,0.0);  // Bottom
@@ -1085,6 +1220,9 @@ glFlush();
 
     output(260,020,"Press any key to Continue");
 
+
+    
+    
 
     glFlush();    
 
@@ -1114,42 +1252,45 @@ void solution(){
 
 
     int i=0;
+
     while(i<150){
 
-    outputC(50+i,550,"DIFFIE-HELLMAN KEY EXCHANGE");
+    outputRed(50+i,550,"DIFFIE-HELLMAN KEY EXCHANGE");
+    outputC(50+i,540,"_______________________________");
+
+
     delay(7);
 
     outputBG(50+i,550,"DIFFIE-HELLMAN KEY EXCHANGE");
+    outputBG(50+i,540,"______________________________");
+
+    
     i+=1;
+
     }
 
-    outputC(50+i,550,"DIFFIE-HELLMAN KEY EXCHANGE");
+    outputRed(50+i,550,"DIFFIE-HELLMAN KEY EXCHANGE");
+    outputC(50+i,540,"______________________________");
 
 
-    outputHelveticaWhite(110,470,"* DIFFIE-HELLMAN KEY EXCHANGE establishes a shared secret between two parties,");
 
-    outputHelveticaWhite(110,440,"    that can be used for secret communication for exchanging data over public networks.");
+    outputWhite(60,440,"* DIFFIE-HELLMAN KEY EXCHANGE establishes a shared secret between two parties,");
+
+    outputWhite(60,410,"    that can be used for secret communication for exchanging data over public networks.");
 
 
-    miniExchange();
+    //miniSecure();
 
     //  that can be used for secret communication for exchanging data over public networks.");
 
-outputHelveticaWhite(110,260,"* This algorithm can also be used for:");
-outputHelveticaWhite(110,230,"  Encryption");
-outputHelveticaWhite(110,200,"  Password Authenticated Agreement");
-outputHelveticaWhite(110,170,"  Forward Secrecy");
+outputWhite(60,350,"* This algorithm can also be used for:");
+outputWhite(60,320,"  Encryption");
+outputWhite(60,290,"  Password Authenticated Agreement");
+outputWhite(60,250,"  Forward Secrecy");
  
-miniUses();
+   miniUses();
 
-
-
-
-
-
-
-
-
+    //miniSecure();
 
 
 
@@ -1165,7 +1306,6 @@ miniUses();
 
 
     output(225,020,"Press \"S\" to Start Simulation");
-
 
     glFlush();    
 
