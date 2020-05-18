@@ -39,7 +39,7 @@ glEnd();
 
 void outputRed(int x,int y,char *string)
 {
-    glColor3f(0.5,0.81,0.94);                                  //Red-B
+    glColor3f(1,0.01,0.24);                 //Alice body                       //Red-B
     int len,i;
     glRasterPos2f(x,y);
     len=(int) strlen(string);
@@ -104,7 +104,7 @@ void outputC(int x,int y,char *string)
 
 void outputBlue(int x,int y,char *string)
 {
-    glColor3f(0,0,1);
+    glColor3f(0.5,0.81,0.94); 
     int len,i;
     glRasterPos2f(x,y);
     len=(int) strlen(string);
@@ -629,13 +629,13 @@ void success(){
 
     while(i<50){
 
-        outputC(240,280+i,"CONNECTION ESTABLISHED !!");
+        outputBlue(240,280+i,"CONNECTION ESTABLISHED !!");
         delay(10);
         outputBG(240,280+i,"CONNECTION ESTABLISHED !!");
         i+=1;
 
     }
-        outputC(240,280+i,"CONNECTION ESTABLISHED !!");
+        outputBlue(240,280+i,"CONNECTION ESTABLISHED !!");
 
 
 }
@@ -712,7 +712,7 @@ glBegin(GL_QUADS);
     glVertex2f(80,335);
 glEnd();
 
-output(85,420,"ALICE");
+outputC(85,420,"ALICE");
 
 
 
@@ -757,7 +757,7 @@ glBegin(GL_QUADS);
     glVertex2f(570,335);
 glEnd();
 
-output(580,420,"BOB");
+outputBlue(580,420,"BOB");
 
 
 }
@@ -792,7 +792,7 @@ glBegin(GL_QUADS);
     glVertex2f(320,585);
 glEnd();
 
-output(305,670,"INTRUDER");
+outputRed(305,670,"INTRUDER");
 
 
 }
@@ -844,6 +844,25 @@ void credits(){
     // }
 
     outputC(50+i,550,"DIFFIE-HELLMAN KEY EXCHANGE");
+
+    // outputHelveticaWhite(75,110,"Presented By:");
+    // outputHelveticaWhite(75,90,"Praveen Honavar (4SF17CS111)");
+    // outputHelveticaWhite(75,70,"Nischitha B M (4SF17CS101)");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1127,6 +1146,95 @@ void drawCircle2(){
 }
 
 
+void miniSolution(){
+
+    float theata1;                              //Bulb
+    float theata2;
+
+    glColor3f(1,1,0);
+    glBegin(GL_POLYGON);
+    for(int i=0;i<360;i++){
+        theata1=i*3.142/180;
+        glVertex2f(550+10*cos(theata1),340+20*sin(theata1));
+    }
+
+    glEnd();
+
+
+    glColor3f(0,0,0.0);              //  Bulb bottom
+
+    glBegin(GL_QUADS);
+        glVertex2f(545,320);
+        glVertex2f(555,320);
+        glVertex2f(555,310);
+        glVertex2f(545,310);
+    glEnd();
+
+
+    glColor3f(1,1,0);         //Bulb lines
+    glBegin(GL_LINES);
+        glVertex2f(560,360);   //right
+        glVertex2f(570,380);
+
+        glVertex2f(540,360);    //left
+        glVertex2f(530,380);
+
+        glVertex2f(550,370);    //center
+        glVertex2f(550,390);
+
+    glEnd();
+
+    glColor3f(1,0.79,0.29);                //Bob head
+    glBegin(GL_POLYGON);
+    for(int i=0;i<360;i++){
+        theata2=i*3.142/180;
+        glVertex2f(500+10*cos(theata2),280+20*sin(theata2));
+    }
+
+    glEnd();
+
+    glColor3f(0.5,0.81,0.94);                 //Bob body
+    glBegin(GL_POLYGON);
+    for(int i=0;i<360;i++){
+
+        theata2=i*3.142/180;
+        glVertex2f(500+10*cos(theata2),210+40*sin(theata2));
+    }
+
+    glEnd();
+
+
+glColor3f(0.101,0.176,0.231);            //clear Bob
+
+    // glColor3f(1,1,0);                 
+
+glBegin(GL_QUADS);
+    glVertex2f(480.0,145.0);
+    glVertex2f(560.0,145.0);
+    glVertex2f(560.0,205.0);
+    glVertex2f(480.0,205.0);
+glEnd();
+
+
+outputHelveticaWhite(538,280,"Idea");
+        
+
+
+
+
+
+
+
+
+
+
+    glFlush();
+
+
+
+}
+
+
 
 
 void problem(){
@@ -1255,11 +1363,11 @@ void solution(){
 
     while(i<150){
 
-    outputRed(50+i,550,"DIFFIE-HELLMAN KEY EXCHANGE");
-    outputC(50+i,540,"_______________________________");
+    outputC(50+i,550,"DIFFIE-HELLMAN KEY EXCHANGE");
+    outputRed(50+i,540,"_______________________________");
 
 
-    delay(7);
+    delay(8);
 
     outputBG(50+i,550,"DIFFIE-HELLMAN KEY EXCHANGE");
     outputBG(50+i,540,"______________________________");
@@ -1269,26 +1377,27 @@ void solution(){
 
     }
 
-    outputRed(50+i,550,"DIFFIE-HELLMAN KEY EXCHANGE");
-    outputC(50+i,540,"______________________________");
+    outputC(50+i,550,"DIFFIE-HELLMAN KEY EXCHANGE");
+    outputRed(50+i,540,"______________________________");
 
 
 
-    outputWhite(60,440,"* DIFFIE-HELLMAN KEY EXCHANGE establishes a shared secret between two parties,");
+    outputWhite(50,460,"- Diffe-Hellman key exchange algorithm establishes a shared secret between two parties,");
 
-    outputWhite(60,410,"    that can be used for secret communication for exchanging data over public networks.");
+    outputWhite(50,430,"    that can be used for secret communication for exchanging data over public networks.");
 
 
     //miniSecure();
 
     //  that can be used for secret communication for exchanging data over public networks.");
 
-outputWhite(60,350,"* This algorithm can also be used for:");
-outputWhite(60,320,"  Encryption");
-outputWhite(60,290,"  Password Authenticated Agreement");
-outputWhite(60,250,"  Forward Secrecy");
+    outputWhite(50,350,"- This algorithm can also be used for:");
+    outputWhite(54,310,"  Encryption");
+    outputWhite(54,270,"  Password Authenticated Agreement");
+    outputWhite(54,230,"  Forward Secrecy");
  
-   miniUses();
+    
+    miniSolution();
 
     //miniSecure();
 
