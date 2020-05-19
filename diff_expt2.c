@@ -50,6 +50,26 @@ void outputRed(int x,int y,char *string)
 }
 
 
+void outputPink(int x,int y,char *string)
+{
+     glColor3f(1,0.79,0.29);                 //Alice body                       //Red-B
+    int len,i;
+    glRasterPos2f(x,y);
+    len=(int) strlen(string);
+    for(i=0;i<len;i++)
+        glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,string[i]);
+    glFlush();
+    
+}
+
+
+
+
+
+
+
+
+
 void outputHelveticaWhite(int x,int y,char *string)
 {
     glColor3f(1,1,1);
@@ -63,14 +83,14 @@ void outputHelveticaWhite(int x,int y,char *string)
 }
 
 
-void outputWhite12(int x,int y,char *string)
+void outputWhite10(int x,int y,char *string)
 {
     glColor3f(1,1,1);
     int len,i;
     glRasterPos2f(x,y);
     len=(int) strlen(string);
     for(i=0;i<len;i++)
-        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_12,string[i]);
+        glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_10,string[i]);
     glFlush();
     
 }
@@ -126,6 +146,75 @@ void outputBG(int x,int y,char *string)
     glFlush();
     
 }
+
+void outputBG1(int x,int y,char *string)
+{
+    glColor3f(0.101,0.176,0.231);
+    int len,i;
+    glRasterPos2f(x,y);
+    len=(int) strlen(string);
+    for(i=0;i<len;i++)
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,string[i]);
+    glFlush();
+    
+}
+
+
+
+
+
+
+void outputBlack(int x,int y,char *string)
+{
+    glColor3f(0,0,0);
+    int len,i;
+    glRasterPos2f(x,y);
+    len=(int) strlen(string);
+    for(i=0;i<len;i++)
+        glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,string[i]);
+    glFlush();
+    
+}
+
+
+
+
+void outputHelveticaYellow(int x,int y,char *string)
+{
+    glColor3f(1,1,0);
+    int len,i;
+    glRasterPos2f(x,y);
+    len=(int) strlen(string);
+    for(i=0;i<len;i++)
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,string[i]);
+    glFlush();
+    
+}
+
+
+void outputGreen(int x,int y,char *string)
+{
+    glColor3f(0.4,1,0.0);
+    int len,i;
+    glRasterPos2f(x,y);
+    len=(int) strlen(string);
+    for(i=0;i<len;i++)
+        glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,string[i]);
+    glFlush();
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -705,6 +794,7 @@ glBegin(GL_LINE_LOOP);
 glEnd();
 
 glColor3f(0.7,0.8,0.6);  //monitor base
+// glColor3f(0.5,0.81,0.94);
 glBegin(GL_QUADS);
     glVertex2f(85,340);
     glVertex2f(135,340);
@@ -750,6 +840,7 @@ glBegin(GL_LINE_LOOP);
 glEnd();
 
 glColor3f(0.7,0.8,0.6);  //monitor base
+// glColor3f(1,0.01,0.24);
 glBegin(GL_QUADS);
     glVertex2f(575,340);
     glVertex2f(625,340);
@@ -802,7 +893,7 @@ void home()
      glClearColor(0.101,0.176,0.231,1);
      glClear(GL_COLOR_BUFFER_BIT);
 
-    outputHelveticaWhite(285,350,"Right Click on the Screen");
+    outputHelveticaWhite(225,370,"Right Click on the Screen to Exchange Keys");
    
     
     computer();
@@ -819,22 +910,58 @@ void credits(){
     glClearColor(0.101,0.176,0.231,1);
     glClear(GL_COLOR_BUFFER_BIT);
 
-    glColor3f(0,0,0.0);  // Top
+
+    outputGreen(110,650,"SAHYADRI COLLEGE OF ENGINEERING AND MANAGEMENT");
+    outputGreen(112,610,"DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING");
 
 
-    glBegin(GL_QUADS);
-        glVertex2f(0,650);
-        glVertex2f(700,650);
-        glVertex2f(700,700);
-        glVertex2f(0,700);
-    glEnd();
+
+    outputHelveticaWhite(65 ,130," Presented By:");
+    outputHelveticaWhite(55,100,"1. Praveen Honavar - 4SF17CS111");
+    outputHelveticaWhite(55,75, "2. Nischitha B M      - 4SF17CS101");
 
 
-    output(270,665,"CREDENTIALS");
+
+    outputHelveticaWhite(285,310,"UNDER THE GUIDENCE OF");
+    outputWhite(315,270,"Dr MANJULA ");
+    outputHelveticaWhite(260,230,"PROFESSOR, DEPARTMENT OF CSE");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // glColor3f(0,0,0.0);  // Top
+
+
+    // glBegin(GL_QUADS);
+    //     glVertex2f(0,650);
+    //     glVertex2f(700,650);
+    //     glVertex2f(700,700);
+    //     glVertex2f(0,700);
+    // glEnd();
+
+
+    // output(270,665,"CREDENTIALS");
 
 
     int i=0;
-    // while(i<150){
+    while(i<400){
 
     // outputC(50+i,550,"DIFFIE-HELLMAN KEY EXCHANGE");
     // delay(7);
@@ -843,23 +970,33 @@ void credits(){
     // i+=1;
     // }
 
-    outputC(50+i,550,"DIFFIE-HELLMAN KEY EXCHANGE");
+     outputHelveticaWhite(0+i-100,450,"A MINI-PROJECT ON");
 
-    // outputHelveticaWhite(75,110,"Presented By:");
-    // outputHelveticaWhite(75,90,"Praveen Honavar (4SF17CS111)");
-    // outputHelveticaWhite(75,70,"Nischitha B M (4SF17CS101)");
+    // outputHelveticaYellow(150+i-200,450,"A Mini-Project on");
 
-
-
+    // outputWhite(600-i,420,"DIFFIE-HELLMAN KEY EXCHANGE");
+        outputC(630-i,410,"DIFFIE-HELLMAN KEY EXCHANGE");
 
 
+    delay(8);
+
+    outputBG1(0+i-100,450,"A MINI-PROJECT ON");
+    outputBG(630-i,410,"DIFFIE-HELLMAN KEY EXCHANGE");
+
+    i+=1;
+
+    }
+
+    outputHelveticaWhite(0+i-100,450,"A MINI-PROJECT ON");
+    // outputHelveticaYellow(150+i-200,450,"A Mini-Project on");
+
+    // outputWhite(600-i,420,"DIFFIE-HELLMAN KEY EXCHANGE");
+
+    outputC(630-i,410,"DIFFIE-HELLMAN KEY EXCHANGE");
 
 
 
-
-
-
-
+    
 
 
 
@@ -876,7 +1013,7 @@ void credits(){
         glVertex2f(0,0);
     glEnd();
 
-    output(260,020,"Press \"Enter\" to Start");
+    output(260,020,"        Press \"Enter\" to Start");
 
     // glutSwapBuffers();
     glFlush();    
@@ -1103,6 +1240,9 @@ glBegin(GL_LINE_LOOP);
     glVertex2f(500.0+kposx,410.0);
 
 glEnd();
+
+
+
 glFlush();
 
 // glClearColor(0.101,0.176,0.231,1);
@@ -1430,7 +1570,7 @@ void menu(int id){
     if(id==1){
 
         
-        clearArea(285,500,340,390);
+        clearArea(215,500,340,390);
         yellow();
         // delay(500);
         glutTimerFunc(1000,red,0);
