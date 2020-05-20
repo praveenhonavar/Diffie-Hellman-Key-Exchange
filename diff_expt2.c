@@ -736,6 +736,7 @@ void yellow()
 
 glColor3f(1,1,0.0);  // Alice 
 
+
 glBegin(GL_QUADS);
     glVertex2f(80,325);
     glVertex2f(140,325);
@@ -775,7 +776,16 @@ glFlush();
 void computer()
 {
     
-glColor3f(0.7,0.8,0.6);  //monitor in
+// glColor3f(0.7,0.8,0.6);  //monitor in
+
+// glColor3f(1,1,0.0);
+
+// glColor3f(1,0.01,0.24);
+
+
+glColor3f(0.61,0.125,0.94);  
+
+
 
 
 glBegin(GL_QUADS);
@@ -822,7 +832,9 @@ outputC(85,420,"ALICE");
 
 void computer_dest(){
 
-glColor3f(0.7,0.8,0.6);  //monitor in
+// glColor3f(0.7,0.8,0.6);  //monitor in
+
+glColor3f(0.5,0.81,0.94);
 
 glBegin(GL_QUADS);
     glVertex2f(570,350);
