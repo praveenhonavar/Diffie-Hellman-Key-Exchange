@@ -1212,6 +1212,19 @@ glBegin(GL_LINE_LOOP);
 
 glEnd();
 
+
+    // float t=0;
+
+    // //  glColor3f(0.101,0.176,0.231);                //Bob head
+    // glBegin(GL_POLYGON);
+    // for(int i=0;i<360;i++){
+    //     t=i*3.142/180;
+    //     glVertex2f(480+10*cos(t)+i,380+20*sin(t));
+    // }
+
+    // glEnd();
+    // glFlush();
+
 glFlush();
 
 }
@@ -1252,6 +1265,21 @@ glBegin(GL_LINE_LOOP);
     glVertex2f(500.0+kposx,410.0);
 
 glEnd();
+
+
+
+
+    // float t=0;
+
+    // glColor3f(1,1,0);                //Bob head
+    // glBegin(GL_POLYGON);
+    // for(int i=0;i<360;i++){
+    //     t=i*3.142/180;
+    //     glVertex2f(480+10*cos(t)+i,380+20*sin(t));
+    // }
+
+    // glEnd();
+    // glFlush();
 
 
 
