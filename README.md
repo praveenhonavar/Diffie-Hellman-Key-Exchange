@@ -1,24 +1,14 @@
-# CG-DIFFE
+# DIFFIE-HELLMAN KEY EXCHANGE
 
 
-## Steps:
+### Diffie-Hellman Key Exchange is an OpenGL CG-Mini-Project that simulates the Diffie-Hellman key exchange algorithm.
 
 
-1) Enter private key for Alice:
-   5 (any prime number)
+# Demo
 
-2)  Enter private key for Bob:
-   3 (any prime number)
+Click here to watch:point_down: 
 
-
-3) Right click anywhere on the screen to get menu
-
-4)  * Exchange keys
-    * Shared Keys
-
-
-If you get *connection established* they excecuted properly
-
+https://www.youtube.com/watch?v=ArHO-UPGGg0
 
 # Screenshots
 
