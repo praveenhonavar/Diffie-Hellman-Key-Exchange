@@ -1,5 +1,9 @@
-#include <GL/glut.h>
+// To compile use:
+// gcc diffe-hellman.c -lglut -lGLU -lGL -lm
 
+
+
+#include <GL/glut.h>
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
