@@ -205,20 +205,6 @@ void outputGreen(int x,int y,char *string)
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 void output(int x,int y,char *string)
 {
     glColor3f(0.7,0.8,0.6);
@@ -235,66 +221,8 @@ float pos1 = 80;
 float pos2 = 140;
 
 
-// void moveRight(){
-
-// int i=0;
-// while (i<495)
-// {
-
-// glColor3f(1,0.49,0);  // Alice orange 
-
-// glBegin(GL_QUADS);
-//     glVertex2f(pos1,325);
-//     glVertex2f(pos2,325);
-//     glVertex2f(pos2,300);
-//     glVertex2f(pos1,300);
-// glEnd();
-
-// delay(1);
-// // glutTimerFunc(1000,clearArea(pos1,pos2,325,300));  
-// clearArea(pos1-70,pos2-70,325,300);
-
-// pos1+=1;
-// pos2+=1;
-// i+=1;
-
-
-// glFlush();
-// }
-// }
-
 float pos3 = 570;
 float pos4 = 630;
-
-// void moveLeft(){
-
-// int j=630;
-
-// while (j>80)
-// {
-//     /* code */
-// glColor3f(0,1,0.0);  //  Bob green
-// glBegin(GL_QUADS);
-//     glVertex2f(pos3,325);
-//     glVertex2f(pos4,325);
-//     glVertex2f(pos4,300);
-//     glVertex2f(pos3,300);
-// glEnd();
-
-// delay(2);
-// // glutTimerFunc(1000,clearArea(pos1,pos2,325,300));  
-// clearArea(pos3+70,pos4+70,325,300);
-
-// pos3-=1;
-// pos4-=1;
-// j-=1;
-
-
-// glFlush();
-
-// }
-// }
-// void moveAll(int pos1,int pos2,int pos3,int pos4)
 
 
 float ipos1=240;
@@ -336,15 +264,6 @@ glEnd();
 glFlush();
 
 }
-
-
-
-
-
-
-
-
-
 
 
 void moveHorizontal(){
@@ -389,9 +308,6 @@ pos4-=1;
 j-=1;
 
 
-
-
-
 glFlush();
 
 }
@@ -409,9 +325,6 @@ float ipos1=325;
 float ipos2=300;
 
 
-
-
-// int n=630;
 
 while (m<250)
 {
@@ -446,23 +359,6 @@ ipos1+=1;
 ipos2+=1;
 m+=1;
 
-// glColor3f(0,1,0.0);  //  Bob green
-// glBegin(GL_QUADS);
-//     glVertex2f(pos3,325);
-//     glVertex2f(pos4,325);
-//     glVertex2f(pos4,300);
-//     glVertex2f(pos3,300);
-// glEnd();
-
-// delay(1);
-// // glutTimerFunc(1000,clearArea(pos1,pos2,325,300));  
-// clearArea(pos3+70,pos4+70,325,300);
-
-// pos3-=1;
-// pos4-=1;
-// j-=1;
-
-
 
 
 glFlush();
@@ -471,47 +367,6 @@ outputHelveticaWhite(285,350,"Now add your private key");
 
 
 }
-
-
-
-
-
-
-
-// int j=630;
-
-// while (j>80)
-// {
-//     /* code */
-// glColor3f(0,1,0.0);  //  Bob green
-// glBegin(GL_QUADS);
-//     glVertex2f(pos3,325);
-//     glVertex2f(pos4,325);
-//     glVertex2f(pos4,300);
-//     glVertex2f(pos3,300);
-// glEnd();
-
-// delay(2);
-// // glutTimerFunc(1000,clearArea(pos1,pos2,325,300));  
-// clearArea(pos3+70,pos4+70,325,300);
-
-// pos3-=1;
-// pos4-=1;
-// j-=1;
-
-
-// glFlush();
-
-// }
-
-// }
-
-
-
-
-
-
-
 
 
 void red(){
@@ -567,9 +422,7 @@ glEnd();
 
 delay(1000);
   outputWhite(44,120,"3] They disguise thier private key by mixing it with public key to obtain orange and green."); 
-    // outputWhite(150,75,"                to obtain orange and green");
-    // delay(500);
-
+   
 
 glFlush();
 
@@ -635,45 +488,6 @@ outputWhite(140,40,"which is obtained only when you have respective private keys
 
 
 
-
-// void step1(){
-
-//     outputWhite(230,200,"STEP-1: ALice and Bob agree with a public key (yellow)");
-//     delay(100);
-//     outputWhite(210,150,"STEP-2: ALice and Bob select thier private key (red and blue)");
-//     delay(100);
-//     outputWhite(150,100,"STEP-3: They disguise thier private key by mixing it with public key"); 
-//     outputWhite(150,75,"                to obtain orange and green");
-
-
-
-
-//     outputWhite(150,50,"STEP-4: They mix thier private key and shared secret key to obtain a common color(brown)"); 
-
-
-
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// int y=0;
-
-// float ypos1=250;
-// float ypos2=240;
-
 void success(){
 
   glColor3f(0, 1, 0);
@@ -690,30 +504,6 @@ void success(){
   }
 
   
-
-    // while(y<100){
-
-    // output(250,ypos1,"CONNECTION ESTABLISHED !!");
-
-    // delay(1000);
-
-    // clearArea(250,500,ypos1,ypos2);
-
-    // y+=1;
-    // ypos1+=1;
-    // ypos2+=1;
-
-    // }
-
-
-
-//     for (int y=220; y < 320; y += 1) {
-//      outputWhite(250,y,"CONNECTION ESTABLISHED!!");
-//       delay(2);
-//       if (y != 299)
-//          clearArea(250,500, y+40, 50);
-//    }
-
     int i=0;
 
     while(i<50){
@@ -776,17 +566,7 @@ glFlush();
 void computer()
 {
     
-// glColor3f(0.7,0.8,0.6);  //monitor in
-
-// glColor3f(1,1,0.0);
-
-// glColor3f(1,0.01,0.24);
-
-
 glColor3f(0.61,0.125,0.94);  
-
-
-
 
 glBegin(GL_QUADS);
     glVertex2f(80,350);
@@ -814,19 +594,6 @@ glEnd();
 
 outputC(85,420,"ALICE");
 
-
-
-// glColor3f(1,1,0.0);  // yellow
-
-
-// glBegin(GL_QUADS);
-//     glVertex2f(80,325);
-//     glVertex2f(140,325);
-//     glVertex2f(140,310);
-//     glVertex2f(80,310);
-// glEnd();
-
-   
 }
 
 
@@ -922,72 +689,15 @@ void credits(){
     glClearColor(0.101,0.176,0.231,1);
     glClear(GL_COLOR_BUFFER_BIT);
 
-
-    // outputGreen(110,650,"SAHYADRI COLLEGE OF ENGINEERING AND MANAGEMENT");
-    // outputGreen(112,610,"DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING");
-
-
-
-    // outputHelveticaWhite(65 ,130," Presented By:");
-    // outputHelveticaWhite(55,100,"1. Praveen Honavar - 4SF17CS111");
-    // outputHelveticaWhite(55,75, "2. Nischitha B M      - 4SF17CS101");
-
-
-
-    // outputHelveticaWhite(285,310,"UNDER THE GUIDENCE OF");
-    // outputWhite(315,270,"Dr MANJULA ");
-    // outputHelveticaWhite(260,230,"PROFESSOR, DEPARTMENT OF CSE");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // glColor3f(0,0,0.0);  // Top
-
-
-    // glBegin(GL_QUADS);
-    //     glVertex2f(0,650);
-    //     glVertex2f(700,650);
-    //     glVertex2f(700,700);
-    //     glVertex2f(0,700);
-    // glEnd();
-
-
-    // output(270,665,"CREDENTIALS");
-
-
     int i=0;
     while(i<400){
 
-    // outputC(50+i,550,"DIFFIE-HELLMAN KEY EXCHANGE");
-    // delay(7);
-
-    // outputBG(50+i,550,"DIFFIE-HELLMAN KEY EXCHANGE");
-    // i+=1;
-    // }
+   
 
      outputHelveticaWhite(0+i-100,450,"A MINI-PROJECT ON");
 
-    // outputHelveticaYellow(150+i-200,450,"A Mini-Project on");
-
-    // outputWhite(600-i,420,"DIFFIE-HELLMAN KEY EXCHANGE");
-        outputC(630-i,410,"DIFFIE-HELLMAN KEY EXCHANGE");
+   
+    outputC(630-i,410,"DIFFIE-HELLMAN KEY EXCHANGE");
 
 
     delay(8);
@@ -1000,19 +710,8 @@ void credits(){
     }
 
     outputHelveticaWhite(0+i-100,450,"A MINI-PROJECT ON");
-    // outputHelveticaYellow(150+i-200,450,"A Mini-Project on");
-
-    // outputWhite(600-i,420,"DIFFIE-HELLMAN KEY EXCHANGE");
-
+   
     outputC(630-i,410,"DIFFIE-HELLMAN KEY EXCHANGE");
-
-
-
-    
-
-
-
-
 
 
     glColor3f(0,0,0.0);  // Bottom
@@ -1149,32 +848,11 @@ glFlush();
 
 }
 
-
 glFlush();
-
-
 
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// float kposx=2
 
 void clearKey(int kposx){
 
@@ -1212,18 +890,6 @@ glBegin(GL_LINE_LOOP);
 
 glEnd();
 
-
-    // float t=0;
-
-    // //  glColor3f(0.101,0.176,0.231);                //Bob head
-    // glBegin(GL_POLYGON);
-    // for(int i=0;i<360;i++){
-    //     t=i*3.142/180;
-    //     glVertex2f(480+10*cos(t)+i,380+20*sin(t));
-    // }
-
-    // glEnd();
-    // glFlush();
 
 glFlush();
 
@@ -1265,21 +931,6 @@ glBegin(GL_LINE_LOOP);
     glVertex2f(500.0+kposx,410.0);
 
 glEnd();
-
-
-
-
-    // float t=0;
-
-    // glColor3f(1,1,0);                //Bob head
-    // glBegin(GL_POLYGON);
-    // for(int i=0;i<360;i++){
-    //     t=i*3.142/180;
-    //     glVertex2f(480+10*cos(t)+i,380+20*sin(t));
-    // }
-
-    // glEnd();
-    // glFlush();
 
 
 
@@ -1399,18 +1050,7 @@ glEnd();
 outputHelveticaWhite(538,280,"Idea");
         
 
-
-
-
-
-
-
-
-
-
-    glFlush();
-
-
+glFlush();
 
 }
 
@@ -1508,15 +1148,7 @@ miniUses();
 
     output(260,020,"Press any key to Continue");
 
-
-    
-    
-
     glFlush();    
-
-
-
-
 
 }
 
@@ -1567,10 +1199,7 @@ void solution(){
     outputWhite(50,430,"    that can be used for secret communication for exchanging data over public networks.");
 
 
-    //miniSecure();
-
-    //  that can be used for secret communication for exchanging data over public networks.");
-
+   
     outputWhite(50,350,"- This algorithm can also be used for:");
     outputWhite(54,310,"  Encryption");
     outputWhite(54,270,"  Password Authenticated Agreement");
@@ -1578,10 +1207,6 @@ void solution(){
  
     
     miniSolution();
-
-    //miniSecure();
-
-
 
     glColor3f(0,0,0.0);  // Bottom
 
@@ -1624,16 +1249,7 @@ void menu(int id){
         // orange2(); 
         // green2();
         glutTimerFunc(3000,moveVertical,0);
-        // glutTimerFunc(5000,step1,0);
-        // moveAll(80,140,570,630); 
-        // glutTimerFunc(2500,moveLeft,0);
-        
-        
-        
-        // moveLeft();
-        
-        // glutPostRedisplay();
-
+       
     }
 
     else if(id==2){
@@ -1642,13 +1258,9 @@ void menu(int id){
         brownA();
         brownB();
 
-        // problems();
-
-        
         glutTimerFunc(500,success,0);
 
-        // success(); 
-    
+
     }
      else{ exit(0); }
 
@@ -1661,8 +1273,7 @@ void keyfunc (unsigned char key, int x, int y)
 
       case 'S' :
       case 's' :
-         // glutDisplayFunc(keys);
-          // glutPostRedisplay();
+         
          	home();
          	break;
          	   	
