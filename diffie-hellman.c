@@ -1227,10 +1227,6 @@ void solution(){
 }
 
 
-
-
-
-
 void menu(int id){
     if(id==1){
 

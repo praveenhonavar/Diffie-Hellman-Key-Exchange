@@ -4,6 +4,22 @@
 ### Diffie-Hellman Key Exchange is an OpenGL CG-Mini-Project that simulates the Diffie-Hellman key exchange algorithm.
 
 
+
+
+# Source Code
+
+Click here to get Source code for Ubuntu:point_down:
+
+<a href='https://github.com/praveenhonavar/Diffie-Hellman-Key-Exchange/blob/master/diffie-hellman.c'>
+DIFFIE-HELLMAN KEY EXCHANGE FOR UBUNTU OS </a>
+
+
+Click here to get Source code for Windows:point_down:
+
+<a href='https://github.com/praveenhonavar/Diffie-Hellman-Key-Exchange/blob/master/main.cpp'>
+DIFFIE-HELLMAN KEY EXCHANGE FOR WINDOWS OS </a>
+
+
 # Demo
 
 Click here to watch:point_down:
